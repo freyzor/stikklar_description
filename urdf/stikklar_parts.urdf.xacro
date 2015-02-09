@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="stikklar_config.urdf.xacro" />
+
+    <macro name="collision_box" params="xyz rpy size">
+        <collision>
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <geometry>
+                <box size="${size}" />
+            </geometry>
+        </collision>
+    </macro>
+    <macro name="inertia_default">
+        <inertial>
+            <mass value="0.00001" />
+            <origin xyz="0 0 0" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+        </inertial>
+    </macro>
+    <macro name="visual_box" params="color size xyz rpy">
+        <visual>
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <geometry>
+                <box size="${size}" />
+            </geometry>
+            <material name="${color}"/>
+        </visual>
+    </macro>
+    <macro name="link_mesh" params="name mesh color box_xyz size scale">
+        <link name="${name}_link">
+            <inertia_default />
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://${PACKAGE}/meshes/${mesh}" scale="${scale}"/>
+                </geometry>
+                <material name="${color}"/>
+            </visual>
+            <collision_box xyz="${xyz}" rpy="0 0 0" size="${size}" />
+        </link>
+    </macro>
+    <macro name="link_box" params="name color size offset">
+        <link name="${name}_link">
+            <inertia_default />
+            <visual_box color="${color}" size="${size}" offset="${offset}" />
+            <collision_box xyz="${offset}" rpy="0 0 0" size="${size}" />
+        </link>
+    </macro>
+    <macro name="joint_fixed" params="parent name xyz rpy">
+        <joint name="${name}_joint" type="fixed">
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <parent link="${parent}_link"/>
+            <child link="${name}_link" />
+        </joint>
+    </macro>
+    <macro name="joint_revolute" params="parent name llimit ulimit vel xyz rpy axis">
+        <joint name="${name}_joint" type="revolute">
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <axis xyz="${axis}" />
+            <limit effort="30" velocity="${vel}" lower="${llimit}" upper="${ulimit}" />
+            <parent link="${parent}_link" />
+            <child link="${name}_link" />
+        </joint>        
+    </macro>
+
+    <!-- atmic shapes, ax12, bioloids frames F1, F2, F3, F4 -->
+    <macro name="geometry_ax12">
+        <geometry>
+            <mesh filename="package://${PACKAGE}/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </macro>
+
+    <macro name="visual_ax12" params="xyz rpy">
+        <visual>
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <geometry_ax12 />
+            <material name="grey30"/>
+        </visual>
+    </macro>
+
+    <macro name="collision_ax12" params="xyz rpy">
+        <collision_box xyz="${xyz}" rpy="0 0 0" size="0.032 0.040 0.0501" />
+    </macro>
+
+    <macro name="part_ax12" params="xyz rpy">
+        <visual_ax12 xyz="${xyz}" rpy="${rpy}" />
+        <collision_ax12 xyz="${xyz}" rpy="${rpy}" />
+    </macro>s
+
+    <macro name="geometry_F1">
+        <geometry>
+            <mesh filename="package://${PACKAGE}/meshes/F1.stl" scale="1 1 1"/>
+        </geometry>
+    </macro>
+    <macro name="visual_F1" params="xyz rpy">
+        <visual>
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <geometry_F1 />
+            <material name="grey60"/>
+        </visual>
+    </macro>
+    <macro name="collision_F1" params="xyz rpy">
+        <collision_box xyz="${xyz}" rpy="${rpy}" size="0.04 0.028 0.046" />
+    </macro>
+    <macro name="part_F1" params="xyz rpy">
+        <collision_F1 xyz="${xyz}" rpy="${rpy}" />
+        <visual_F1 xyz="${xyz}" rpy="${rpy}" />
+    </macro>
+    <macro name="geometry_F2">
+        <geometry>
+            <mesh filename="package://${PACKAGE}/meshes/F2.stl" scale="${M_SCALE_3}"/>
+        </geometry>
+    </macro>
+    <macro name="visual_F2" params="xyz rpy">
+        <visual>
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <geometry_F2 />
+            <material name="grey60"/>
+        </visual>
+    </macro>
+    <macro name="collision_F2" params="xyz rpy">
+        <collision_box xyz="${xyz}" rpy="${rpy}" size="0.025 0.0485 0.0375" />
+    </macro>
+    <macro name="part_F2" params="xyz rpy">
+        <collision_F2 xyz="${xyz}" rpy="${rpy}" />
+        <visual_F2 xyz="${xyz}" rpy="${rpy}" />
+    </macro>
+    <macro name="geometry_F3">
+        <geometry>
+            <mesh filename="package://${PACKAGE}/meshes/F3.stl" scale="${M_SCALE_3}"/>
+        </geometry>
+    </macro>
+    <macro name="visual_F3" params="xyz rpy">
+        <visual>
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <material name="grey60"/>
+            <geometry_F3 />
+        </visual>
+    </macro>
+    <macro name="collision_F3" params="xyz rpy">
+        <collision_box xyz="${xyz}" rpy="${rpy}" size="0.028 0.0485 0.065" />
+    </macro>
+    <macro name="part_F3" params="xyz rpy">
+        <collision_F3 xyz="${xyz}" rpy="${rpy}" />
+        <visual_F3 xyz="${xyz}" rpy="${rpy}" />
+    </macro>
+    <macro name="geometry_F4">
+        <geometry>
+            <mesh filename="package://${PACKAGE}/meshes/F4.stl" scale="${M_SCALE_3}"/>
+        </geometry>
+    </macro>
+    <macro name="visual_F4" params="xyz rpy">
+        <visual>
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <material name="grey60"/>
+            <geometry_F4 />
+        </visual>
+    </macro>
+    <macro name="collision_F4" params="xyz rpy">
+        <collision_box xyz="${xyz}" rpy="${rpy}" size="0.028 0.0485 0.065" />
+    </macro>
+
+    <macro name="part_F4" params="xyz rpy">
+        <collision_F4 xyz="${xyz}" rpy="${rpy}" />
+        <visual_F4 xyz="${xyz}" rpy="${rpy}" />
+    </macro>
+
+    <macro name="geometry_F4">
+        <geometry>
+            <mesh filename="package://${PACKAGE}/meshes/F4.stl" scale="${M_SCALE_3}"/>
+        </geometry>
+    </macro>
+    <macro name="visual_F4" params="xyz rpy">
+        <visual>
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <material name="grey60"/>
+            <geometry_F4 />
+        </visual>
+    </macro>
+    <macro name="collision_F4" params="xyz rpy">
+        <collision_box xyz="${xyz}" rpy="${rpy}" size="0.028 0.0485 0.065" />
+    </macro>
+
+    <macro name="part_box" params="xyz rpy size color">
+        <collision_box xyz="${xyz}" rpy="${rpy}" size="${size}" />
+        <visual_box xyz="${xyz}" rpy="${rpy}" size="${size}" color="${color}" />
+    </macro>
+
+    <macro name="part_tibia_bone" params="xyz rpy">
+        <part_box xyz="${xyz}" rpy="${rpy}" size="0.02 0.02 0.1" color="grey70" />
+    </macro>
+    <macro name="part_tibia_bone_spacer" params="xyz rpy">
+        <part_box xyz="${xyz}" rpy="${rpy}" size="0.02 0.02 0.04" color="grey70" />
+    </macro>
+
+    <!-- link+join+composite visuals and collisions -->
+    <macro name="shoulder" params="parent name xyz rpy">
+        <link name="${name}_link">
+            <inertia_default />
+            <part_F4 xyz="0 0 0" rpy="0 0 0" />
+        </link>
+        <joint_fixed name="${name}" parent="${parent}" xyz="${xyz}" rpy="${rpy}" />
+    </macro>
+    <macro name="coxa_bone" params="parent name">
+        <link name="${name}_link">
+            <inertia_default />
+            <part_ax12 xyz="0 0 0" rpy="0 0 ${MPI}" />
+            <part_F3 xyz="0 0 -0.0415" rpy="0 ${MPI} 0 "/>
+            <part_F2 xyz="0 0 -${L_COXA}" rpy="0 0 ${MPI2} "/>
+        </link> 
+        <joint_revolute name="${name}" parent="${parent}" xyz="0 0 0" rpy="0 0 0" 
+            vel="100" llimit="${MIN_RAD_COXA}" ulimit="${MAX_RAD_COXA}" axis="0 1 0" />   
+    </macro>
+
+    <macro name="femur_bone" params="parent name">
+        <link name="${name}_link">
+            <inertia_default />
+            <part_ax12 xyz="0 0 0" rpy="0 0 ${MPI2}"/>
+            <part_F3 xyz="0 0 -0.0415" rpy="0 ${MPI} 0"/>
+            <part_F3 xyz="0.008 0 -0.0415" rpy="0 0 0"/>
+            <part_ax12 xyz="0.008 0 -${L_FEMUR}" rpy="${MPI} 0 -${MPI2}"/>
+        </link> 
+        <joint_revolute name="${name}" parent="${parent}" xyz="0 0 -${L_COXA}" rpy="0 0 0" 
+            vel="100" llimit="${MIN_RAD_FEMUR}" ulimit="${MAX_RAD_FEMUR}" axis="${VLEFT}" />   
+    </macro>
+
+    <property name="TIBIA_AX" value="0.008" />
+    <property name="TIBIA_AY" value="0.015" />
+    <property name="TIBIA_AZ" value="0.0755" />
+    <property name="F3T" value="0.04772" />
+    <property name="AX12T" value="0.06328" />
+
+    <macro name="tibia_bone" params="parent name">
+        <link name="${name}_link">
+            <inertia_default />
+            <part_F4 xyz="${TIBIA_AX} 0 0" rpy="0 ${MPI} ${MPI2}" />
+            <part_F1 xyz="${TIBIA_AX} ${-TIBIA_AY} ${-TIBIA_AZ}" rpy="-${MPI2} 0 ${MPI2}" />
+            <part_tibia_bone xyz="0.018 ${-TIBIA_AX-0.0318} ${-TIBIA_AZ-0.0318}" rpy="-${MPI4} 0 0" />
+            <part_tibia_bone_spacer xyz="-0.0025 ${-TIBIA_AY-0.00707} ${-TIBIA_AZ-0.00707}" rpy="-${MPI4} 0 0" />
+            <part_F3 xyz="0.0235 ${-TIBIA_AX-F3T+0.00707} ${-TIBIA_AZ-F3T-0.00707}" rpy="0 -${MPI4} ${MPI2}" />
+            <part_ax12 xyz="0.0235 ${-TIBIA_AX-AX12T+0.0205} ${-TIBIA_AZ-AX12T-0.0205}" rpy="${MPI} -${MPI4} -${MPI2}" />
+        </link> 
+        <joint_revolute name="${name}" parent="${parent}" xyz="0 0 -${L_FEMUR}" rpy="0 0 0" 
+            vel="100" llimit="${MIN_RAD_FEMUR}" ulimit="${MAX_RAD_FEMUR}" axis="${VLEFT}" />   
+    </macro>
+
+    <macro name="neck_base" params="name parent">
+        <link name="neck_base_link">
+            <inertia_default />
+            <part_ax12 xyz="0 -0.023 0" rpy="0 0 0" />
+        </link>
+        <joint_fixed name="neck_base" parent="${parent}" xyz="0 0 ${0.039+0.055/2}" rpy="${MPI2} 0 0" />
+    </macro>
+    <macro name="neck_pan" params="name parent">
+        <link name="${name}_link">
+            <inertia_default />
+            <part_F3 xyz="0 0 0" rpy="${MPI2} ${MPI2} 0"/>
+            <part_ax12 xyz="0 0.04 0" rpy="-${MPI2} -${MPI2} 0" />
+            <!--part_F2 xyz="0 0 -${L_COXA}" rpy="0 0 ${MPI2} "/-->
+        </link>
+        <joint_revolute name="${name}" parent="${parent}" xyz="0 0 0" rpy="0 0 0" 
+            vel="100" llimit="${MIN_PAN}" ulimit="${MAX_PAN}" axis="0 1 0" /> 
+    </macro>
+    <!--macro name="neck_tilt" params="name parent">
+        <link name="${name}_link">
+            <inertia_default />
+        </link> 
+    </macro-->
+
+    <macro name="wheel">
+        <link name="b_l_wheel">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <cylinder length="0.007" radius="0.026" />
+                </geometry>
+            </visual>
+        </link>
+        <joint name="joint_b_l_wheel" type="continuous">
+            <parent link="base_link"/>
+            <child link="b_l_wheel"/>
+            <origin xyz="-0.25 0.30 0" rpy="0 0 0" /> 
+            <axis xyz="0 1 0" rpy="0 0 0" />
+        </joint>
+    </macro>
+
+    <macro name="base" params="size color">
+        <link name="base_link">
+            <inertia_default />
+            <visual_box xyz="0 0 0" rpy="0 0 0" size="${size}" color="grey25" />
+            <collision_box xyz="0 0 0" rpy="0 0 0" size="${size}" />
+        </link>
+    </macro>
+
+    <macro name="stikklar_leg" params="parent name xyz rpy">
+        <!-- x=red y=green z=blue -->
+        <shoulder parent="${parent}" name="${name}_shoulder" xyz="${xyz}" rpy="${rpy}" />
+        <coxa_bone parent="${name}_shoulder" name="${name}_coxa_bone" />
+        <femur_bone parent="${name}_coxa_bone" name="${name}_femur_bone" />
+        <tibia_bone parent="${name}_femur_bone" name="${name}_tibia_bone" />
+    </macro>
+
+    <macro name="stikklar_turret" params="parent">
+        <neck_base parent="${parent}" name="neck_base" />
+        <neck_pan parent="neck_base" name="neck_pan" />
+        <neck_tilt parent="neck_pan" name="neck_tilt" />
+    </macro>
+
+    <xacro:include filename="materials.urdf.xacro" />
+</robot>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="stikklar">
+	<xacro:include filename="/home/viki/catkin_ws/src/dynamixel_urdf/urdf/ax12.xacro" />
+
+
+	<!-- Build the body frame -->
+	<link name="base_link" />
+
+	<joint name="base_joint" type="fixed">
+		<parent link="base_link" />
+		<child link="thorax" />
+		<origin xyz="0 0 0" rpy="0 0 0" />
+	</joint>			
+
+	<link name="thorax">
+    		<!--visual>
+      			<origin	xyz="0 0 0" rpy="0 0 0" />
+      			<geometry>
+				<mesh filename="package://crab_description/meshes/thorax.STL" />
+      			</geometry>
+     			<material name="grey">
+        			<color rgba="0.5 0.5 0.5 1" />
+      			</material>
+    		</visual -->
+	</link>
+
+
+	<xacro:dynamixel_ax12_pan name="neck" parent="base_link" color="Orange">
+		<pose xyz="0 1 0" rpy="0 0 0" />
+	</xacro:dynamixel_ax12_pan>
+</robot>

@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!--
+#define X_COXA      100  // MM between front and back legs /2
+#define Y_COXA      100  // MM between front/back legs /2
+
+// Legs
+#define L_COXA      68  // MM distance from coxa servo to femur servo
+#define L_FEMUR     82 // MM distance from femur servo to tibia servo
+#define L_TIBIA     166 // MM distance from tibia servo to foot
+
+#define DEFAULT_ENDPOINT_X 70  // front/back
+#define DEFAULT_ENDPOINT_Y 70  // right/left
+#define DEFAULT_ENDPOINT_Z 160 // down/up
+
+// Servo IDs
+#define RF_COXA 1
+#define RF_FEMUR 2
+#define RF_TIBIA 3
+
+#define RR_COXA 5
+#define RR_FEMUR 6
+#define RR_TIBIA 7
+
+#define LF_COXA 9
+#define LF_FEMUR 10
+#define LF_TIBIA 11
+
+#define LR_COXA 13
+#define LR_FEMUR 14
+#define LR_TIBIA 15
+
+#define RF_COXA_SIGN 	1
+#define RF_FEMUR_SIGN 	1
+#define RF_TIBIA_SIGN 	-1
+
+#define RR_COXA_SIGN 	-1
+#define RR_FEMUR_SIGN 	1
+#define RR_TIBIA_SIGN 	-1
+
+#define LF_COXA_SIGN 	-1
+#define LF_FEMUR_SIGN 	1
+#define LF_TIBIA_SIGN 	-1
+
+#define LR_COXA_SIGN 	1
+#define LR_FEMUR_SIGN 	1
+#define LR_TIBIA_SIGN 	-1
+
+// Wheel Engine servo IDs
+#define RF_WHEEL 	4
+#define LF_WHEEL 	12
+#define LR_WHEEL 	16
+#define RR_WHEEL 	8
+
+#define RF_WHEEL_SIGN 	-1
+#define LF_WHEEL_SIGN 	1
+#define LR_WHEEL_SIGN 	-1
+#define RR_WHEEL_SIGN 	1
+
+#define PAN_SERVO_ID	17
+#define TILT_SERVO_ID	18
+
+#define MIN_ANGLE_DEG		0.29296875
+#define MIN_ANGLE_RAD		0.005113269292
+#define WHEEL_X_LENGTH 		X_COXA
+#define WHEEL_Y_LENGTH 		Y_COXA * 2
+
+#define RF_COXA_WHEEL_NEUTRAL 666	// 1
+#define LF_COXA_WHEEL_NEUTRAL 358	// 9
+#define LR_COXA_WHEEL_NEUTRAL 666	// 13
+#define RR_COXA_WHEEL_NEUTRAL 358	// 5
+
+// the quadrants of the robot
+// right front is Q1 where x and y are positive
+// proceed CCW from there
+#define RIGHT_FRONT    0
+#define LEFT_FRONT     1
+#define LEFT_REAR      2
+#define RIGHT_REAR     3
+
+# cycle
+	gaitLegOffset[LEFT_FRONT] = 0.0;
+	gaitLegOffset[RIGHT_REAR] = 0.25;
+	gaitLegOffset[RIGHT_FRONT] = 0.5;
+	gaitLegOffset[LEFT_REAR] = 0.75;
+
+
+MIN SERVO = 60, 162, 95
+MAX SERVO = 960, 850, 1005
+NEUTRAL SERVO = 364, 512, 742
+-->
+
+
+<robot>
+	<property name="MPI" value="3.14159265359" />
+	<property name="MPI2" value="1.57079632679" />
+	<property name="MPI4" value="0.7853981634" />
+	<property name="VUP" value="-0 0 1" />
+	<property name="VLEFT" value="1 0 0" />
+	<property name="VFRONT" value="0 1 0" />
+	<property name="M_SCALE" value="0.001" />
+	<property name="M_SCALE_3" value="${M_SCALE} ${M_SCALE} ${M_SCALE}" />
+	<property name="PACKAGE" value="stikklar_description" />
+	<property name="BODY_WIDTH" value="0.14" />
+	<property name="BODY_HEIGHT" value="0.055" />
+	<property name="HALFBASE" value="0.1" />
+	<property name="X_COXA" value="0.1" />
+	<property name="Y_COXA" value="0.1" />
+	<property name="L_COXA" value="0.068" />
+	<property name="L_FEMUR" value="0.082" />
+	<property name="L_TIBIA" value="0.166" />
+	<!-- lambda step: -math.radians(150) + math.radians(step/1024.*300)-->
+	<!-- min servo values: 	coxa=60 femur=162 tibia=95-->
+	<property name="MIN_RAD_COXA" value="-2.3111977204143663" />
+	<property name="MIN_RAD_FEMUR" value="-1.7896442525332481" />
+	<property name="MIN_RAD_TIBIA" value="-2.132233295161041" />
+	<!-- max servo values: 	coxa=960 femur=850 tibia=1005-->
+	<property name="MAX_RAD_COXA" value="2.2907446432425576" />
+	<property name="MAX_RAD_FEMUR" value="1.7282850210178222" />
+	<property name="MAX_RAD_TIBIA" value="2.5208417614254039" />
+	<!-- neutral servo values: 	coxa=364 femur=512 tibia=742-->
+	<property name="NEUTRAL_RAD_COXA" value="-0.75676385535691648" />
+	<property name="NEUTRAL_RAD_FEMUR" value="0.0" />
+	<property name="NEUTRAL_RAD_TIBIA" value="1.1760519373789915" />
+
+	<property name="MIN_PAN" value="-2.61799" />
+	<property name="MAX_PAN" value="2.61799" />
+	<property name="MIN_TILT" value="-1.5707" />
+	<property name="MAX_TILT" value="1.5707" />
+
+</robot>
