@@ -4,54 +4,6 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="stikklar" xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <material name="black">
-    <color rgba="0.2 0.2 0.2 1.0"/>
-  </material>
-  <material name="orange">
-    <color rgba="1.0 0.55 0.0 1.0"/>
-  </material>
-  <material name="grey20">
-    <color rgba="0.2 0.2 0.2 1.0"/>
-  </material>
-  <material name="grey25">
-    <color rgba="0.25 0.25 0.25 1.0"/>
-  </material>
-  <material name="grey30">
-    <color rgba="0.3 0.3 0.3 1.0"/>
-  </material>
-  <material name="grey40">
-    <color rgba="0.4 0.4 0.4 1.0"/>
-  </material>
-  <material name="grey50">
-    <color rgba="0.5 0.5 0.5 1.0"/>
-  </material>
-  <material name="grey60">
-    <color rgba="0.6 0.6 0.6 1.0"/>
-  </material>
-  <material name="grey70">
-    <color rgba="0.7 0.7 0.7 1.0"/>
-  </material>
-  <material name="grey75">
-    <color rgba="0.75 0.75 0.75 1.0"/>
-  </material>
-  <material name="grey">
-    <color rgba="0.5 0.5 0.5 1.0"/>
-  </material>
-  <material name="red">
-    <color rgba="0.8 0.0 0.0 1.0"/>
-  </material>
-  <material name="white">
-    <color rgba="1.0 1.0 1.0 1.0"/>
-  </material>
-  <material name="blue">
-    <color rgba="0.0 0.0 0.8 1.0"/>
-  </material>
-  <material name="green">
-    <color rgba="0.0 0.8 0.0 1.0"/>
-  </material>
-  <material name="lightblue">
-    <color rgba="0.55 0.75 0.9 10"/>
-  </material>
   <link name="base_link">
     <inertial>
       <mass value="0.00001"/>
@@ -63,7 +15,9 @@
       <geometry>
         <box size="0.14 0.14 0.055"/>
       </geometry>
-      <material name="grey25"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -86,14 +40,17 @@
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <material name="grey60"/>
+      <!-- <material name="green"/> -->
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
   </link>
   <joint name="lf_shoulder_joint" type="fixed">
-    <origin rpy="1.57079632679 0 -0.7853981634" xyz="0.1 0.1 0"/>
+    <origin rpy="1.57079632679 0 0.7853981634" xyz="-0.1 0.1 0"/>
     <parent link="base_link"/>
     <child link="lf_shoulder_link"/>
   </joint>
@@ -108,7 +65,9 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -119,12 +78,14 @@
     <collision>
       <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
-      <material name="green"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -140,7 +101,9 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey60"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
     </visual>
   </link>
   <joint name="lf_coxa_bone_joint" type="revolute">
@@ -161,7 +124,9 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -172,38 +137,44 @@
     <collision>
       <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
-      <material name="green"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
+      <origin rpy="0 0 0" xyz="-0.008 0 -0.0415"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
-      <material name="green"/>
+      <origin rpy="0 0 0" xyz="-0.008 0 -0.0415"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <visual>
-      <origin rpy="3.14159265359 0 -1.57079632679" xyz="0.008 0 -0.082"/>
+      <origin rpy="3.14159265359 0 -1.57079632679" xyz="-0.008 0 -0.082"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.008 0 -0.082"/>
+      <origin rpy="0 0 0" xyz="-0.008 0 -0.082"/>
       <geometry>
         <box size="0.032 0.040 0.0501"/>
       </geometry>
@@ -223,79 +194,92 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
     <collision>
-      <origin rpy="0 3.14159265359 1.57079632679" xyz="0.008 0 0"/>
+      <origin rpy="0 3.14159265359 1.57079632679" xyz="-0.008 0 0"/>
       <geometry>
         <box size="0.028 0.0485 0.065"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 3.14159265359 1.57079632679" xyz="0.008 0 0"/>
-      <material name="grey60"/>
+      <origin rpy="0 3.14159265359 1.57079632679" xyz="-0.008 0 0"/>
+      <!-- <material name="green"/> -->
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.008 -0.015 -0.0755"/>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.008 -0.015 -0.0755"/>
       <geometry>
         <box size="0.04 0.028 0.046"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.008 -0.015 -0.0755"/>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.008 -0.015 -0.0755"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F1.stl" scale="1 1 1"/>
       </geometry>
-      <material name="grey60"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0398 -0.1073"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.018 -0.0432 -0.1037"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0398 -0.1073"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.018 -0.0432 -0.1037"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
-      <material name="grey70"/>
+      <material name="grey50">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.0025 -0.02207 -0.08257"/>
+      <origin rpy="-0.7853981634 0 0" xyz="0.0025 -0.02207 -0.08257"/>
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.0025 -0.02207 -0.08257"/>
+      <origin rpy="-0.7853981634 0 0" xyz="0.0025 -0.02207 -0.08257"/>
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
-      <material name="grey70"/>
+      <material name="grey50">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.13029"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.0235 -0.04865 -0.12329"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.13029"/>
-      <material name="green"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.0235 -0.04865 -0.12329"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <visual>
-      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="0.0235 -0.05078 -0.15928"/>
+      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="-0.0235 -0.0511 -0.1526"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.0235 -0.05078 -0.15928"/>
+      <origin rpy="0 0 0" xyz="-0.0235 -0.0511 -0.1526"/>
       <geometry>
         <box size="0.032 0.040 0.0501"/>
       </geometry>
@@ -304,245 +288,26 @@
   <joint name="lf_tibia_bone_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 -0.082"/>
     <axis xyz="1 0 0"/>
-    <limit effort="30" lower="-1.78964425253" upper="1.72828502102" velocity="100"/>
+    <limit effort="30" lower="-2.443" upper="2.443" velocity="100"/>
     <parent link="lf_femur_bone_link"/>
     <child link="lf_tibia_bone_link"/>
   </joint>
-  <link name="rf_shoulder_link">
-    <inertial>
-      <mass value="0.00001"/>
-      <origin xyz="0 0 0"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.028 0.0485 0.065"/>
-      </geometry>
-    </collision>
+  <link name="lf_wheel_link">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <material name="grey60"/>
       <geometry>
-        <mesh filename="package://stikklar_description/meshes/F4.stl" scale="0.001 0.001 0.001"/>
+        <cylinder length="0.005" radius="0.026"/>
       </geometry>
+      <material name="grey30">
+        <color rgba="0.3 0.3 0.3 1.0"/>
+      </material>
     </visual>
   </link>
-  <joint name="rf_shoulder_joint" type="fixed">
-    <origin rpy="1.57079632679 0 -2.35619449019" xyz="0.1 -0.1 0"/>
-    <parent link="base_link"/>
-    <child link="rf_shoulder_link"/>
-  </joint>
-  <link name="rf_coxa_bone_link">
-    <inertial>
-      <mass value="0.00001"/>
-      <origin xyz="0 0 0"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="grey30"/>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.032 0.040 0.0501"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
-      <geometry>
-        <box size="0.028 0.0485 0.065"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
-      <material name="green"/>
-      <geometry>
-        <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 1.57079632679 " xyz="0 0 -0.068"/>
-      <geometry>
-        <box size="0.025 0.0485 0.0375"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 1.57079632679 " xyz="0 0 -0.068"/>
-      <geometry>
-        <mesh filename="package://stikklar_description/meshes/F2.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="grey60"/>
-    </visual>
-  </link>
-  <joint name="rf_coxa_bone_joint" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <axis xyz="0 1 0"/>
-    <limit effort="30" lower="-2.31119772041" upper="2.29074464324" velocity="100"/>
-    <parent link="rf_shoulder_link"/>
-    <child link="rf_coxa_bone_link"/>
-  </joint>
-  <link name="rf_femur_bone_link">
-    <inertial>
-      <mass value="0.00001"/>
-      <origin xyz="0 0 0"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 1.57079632679" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="grey30"/>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.032 0.040 0.0501"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
-      <geometry>
-        <box size="0.028 0.0485 0.065"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
-      <material name="green"/>
-      <geometry>
-        <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
-      <geometry>
-        <box size="0.028 0.0485 0.065"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
-      <material name="green"/>
-      <geometry>
-        <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-    <visual>
-      <origin rpy="3.14159265359 0 -1.57079632679" xyz="0.008 0 -0.082"/>
-      <geometry>
-        <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="grey30"/>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.008 0 -0.082"/>
-      <geometry>
-        <box size="0.032 0.040 0.0501"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="rf_femur_bone_joint" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 -0.068"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="30" lower="-1.78964425253" upper="1.72828502102" velocity="100"/>
-    <parent link="rf_coxa_bone_link"/>
-    <child link="rf_femur_bone_link"/>
-  </joint>
-  <link name="rf_tibia_bone_link">
-    <inertial>
-      <mass value="0.00001"/>
-      <origin xyz="0 0 0"/>
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-    </inertial>
-    <collision>
-      <origin rpy="0 3.14159265359 1.57079632679" xyz="0.008 0 0"/>
-      <geometry>
-        <box size="0.028 0.0485 0.065"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 3.14159265359 1.57079632679" xyz="0.008 0 0"/>
-      <material name="grey60"/>
-      <geometry>
-        <mesh filename="package://stikklar_description/meshes/F4.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.008 -0.015 -0.0755"/>
-      <geometry>
-        <box size="0.04 0.028 0.046"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.008 -0.015 -0.0755"/>
-      <geometry>
-        <mesh filename="package://stikklar_description/meshes/F1.stl" scale="1 1 1"/>
-      </geometry>
-      <material name="grey60"/>
-    </visual>
-    <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0398 -0.1073"/>
-      <geometry>
-        <box size="0.02 0.02 0.1"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0398 -0.1073"/>
-      <geometry>
-        <box size="0.02 0.02 0.1"/>
-      </geometry>
-      <material name="grey70"/>
-    </visual>
-    <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.0025 -0.02207 -0.08257"/>
-      <geometry>
-        <box size="0.02 0.02 0.04"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.0025 -0.02207 -0.08257"/>
-      <geometry>
-        <box size="0.02 0.02 0.04"/>
-      </geometry>
-      <material name="grey70"/>
-    </visual>
-    <collision>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.13029"/>
-      <geometry>
-        <box size="0.028 0.0485 0.065"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.13029"/>
-      <material name="green"/>
-      <geometry>
-        <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </visual>
-    <visual>
-      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="0.0235 -0.05078 -0.15928"/>
-      <geometry>
-        <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="grey30"/>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.0235 -0.05078 -0.15928"/>
-      <geometry>
-        <box size="0.032 0.040 0.0501"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="rf_tibia_bone_joint" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 -0.082"/>
-    <axis xyz="1 0 0"/>
-    <limit effort="30" lower="-1.78964425253" upper="1.72828502102" velocity="100"/>
-    <parent link="rf_femur_bone_link"/>
-    <child link="rf_tibia_bone_link"/>
+  <joint name="lf_wheel_joint" type="continuous">
+    <parent link="lf_tibia_bone_link"/>
+    <child link="lf_wheel_link"/>
+    <origin rpy="0 1.57079632679 0" xyz="0 -0.05 -0.153"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
   </joint>
   <link name="lr_shoulder_link">
     <inertial>
@@ -558,14 +323,17 @@
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <material name="grey60"/>
+      <!-- <material name="green"/> -->
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
   </link>
   <joint name="lr_shoulder_joint" type="fixed">
-    <origin rpy="1.57079632679 0 0.7853981634" xyz="-0.1 0.1 0"/>
+    <origin rpy="1.57079632679 0 2.35619449019" xyz="-0.1 -0.1 0"/>
     <parent link="base_link"/>
     <child link="lr_shoulder_link"/>
   </joint>
@@ -580,7 +348,9 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -591,12 +361,14 @@
     <collision>
       <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
-      <material name="green"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -612,7 +384,9 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey60"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
     </visual>
   </link>
   <joint name="lr_coxa_bone_joint" type="revolute">
@@ -633,7 +407,9 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -644,12 +420,14 @@
     <collision>
       <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
-      <material name="green"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -657,12 +435,14 @@
     <collision>
       <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
-      <material name="green"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -672,7 +452,9 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.008 0 -0.082"/>
@@ -702,7 +484,10 @@
     </collision>
     <visual>
       <origin rpy="0 3.14159265359 1.57079632679" xyz="0.008 0 0"/>
-      <material name="grey60"/>
+      <!-- <material name="green"/> -->
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -718,20 +503,24 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F1.stl" scale="1 1 1"/>
       </geometry>
-      <material name="grey60"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0398 -0.1073"/>
+      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0432 -0.1037"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0398 -0.1073"/>
+      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0432 -0.1037"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
-      <material name="grey70"/>
+      <material name="grey50">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="-0.7853981634 0 0" xyz="-0.0025 -0.02207 -0.08257"/>
@@ -744,30 +533,36 @@
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
-      <material name="grey70"/>
+      <material name="grey50">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.13029"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.12329"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.13029"/>
-      <material name="green"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.12329"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <visual>
-      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="0.0235 -0.05078 -0.15928"/>
+      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="0.0235 -0.0511 -0.1526"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.0235 -0.05078 -0.15928"/>
+      <origin rpy="0 0 0" xyz="0.0235 -0.0511 -0.1526"/>
       <geometry>
         <box size="0.032 0.040 0.0501"/>
       </geometry>
@@ -776,9 +571,26 @@
   <joint name="lr_tibia_bone_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 -0.082"/>
     <axis xyz="1 0 0"/>
-    <limit effort="30" lower="-1.78964425253" upper="1.72828502102" velocity="100"/>
+    <limit effort="30" lower="-2.443" upper="2.443" velocity="100"/>
     <parent link="lr_femur_bone_link"/>
     <child link="lr_tibia_bone_link"/>
+  </joint>
+  <link name="lr_wheel_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.026"/>
+      </geometry>
+      <material name="grey30">
+        <color rgba="0.3 0.3 0.3 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lr_wheel_joint" type="continuous">
+    <parent link="lr_tibia_bone_link"/>
+    <child link="lr_wheel_link"/>
+    <origin rpy="0 1.57079632679 0" xyz="0 -0.05 -0.153"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
   </joint>
   <link name="rr_shoulder_link">
     <inertial>
@@ -794,14 +606,17 @@
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <material name="grey60"/>
+      <!-- <material name="green"/> -->
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
   </link>
   <joint name="rr_shoulder_joint" type="fixed">
-    <origin rpy="1.57079632679 0 2.35619449019" xyz="-0.1 -0.1 0"/>
+    <origin rpy="1.57079632679 0 -2.35619449019" xyz="0.1 -0.1 0"/>
     <parent link="base_link"/>
     <child link="rr_shoulder_link"/>
   </joint>
@@ -816,7 +631,9 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -827,12 +644,14 @@
     <collision>
       <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
-      <material name="green"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -848,7 +667,9 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey60"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
     </visual>
   </link>
   <joint name="rr_coxa_bone_joint" type="revolute">
@@ -869,7 +690,9 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -880,38 +703,44 @@
     <collision>
       <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
-      <material name="green"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
+      <origin rpy="0 0 0" xyz="-0.008 0 -0.0415"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
-      <material name="green"/>
+      <origin rpy="0 0 0" xyz="-0.008 0 -0.0415"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <visual>
-      <origin rpy="3.14159265359 0 -1.57079632679" xyz="0.008 0 -0.082"/>
+      <origin rpy="3.14159265359 0 -1.57079632679" xyz="-0.008 0 -0.082"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.008 0 -0.082"/>
+      <origin rpy="0 0 0" xyz="-0.008 0 -0.082"/>
       <geometry>
         <box size="0.032 0.040 0.0501"/>
       </geometry>
@@ -931,6 +760,289 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
     <collision>
+      <origin rpy="0 3.14159265359 1.57079632679" xyz="-0.008 0 0"/>
+      <geometry>
+        <box size="0.028 0.0485 0.065"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 3.14159265359 1.57079632679" xyz="-0.008 0 0"/>
+      <!-- <material name="green"/> -->
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/F4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.008 -0.015 -0.0755"/>
+      <geometry>
+        <box size="0.04 0.028 0.046"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.008 -0.015 -0.0755"/>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/F1.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.018 -0.0432 -0.1037"/>
+      <geometry>
+        <box size="0.02 0.02 0.1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.018 -0.0432 -0.1037"/>
+      <geometry>
+        <box size="0.02 0.02 0.1"/>
+      </geometry>
+      <material name="grey50">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="-0.7853981634 0 0" xyz="0.0025 -0.02207 -0.08257"/>
+      <geometry>
+        <box size="0.02 0.02 0.04"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="-0.7853981634 0 0" xyz="0.0025 -0.02207 -0.08257"/>
+      <geometry>
+        <box size="0.02 0.02 0.04"/>
+      </geometry>
+      <material name="grey50">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.0235 -0.04865 -0.12329"/>
+      <geometry>
+        <box size="0.028 0.0485 0.008"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.0235 -0.04865 -0.12329"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="-0.0235 -0.0511 -0.1526"/>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.0235 -0.0511 -0.1526"/>
+      <geometry>
+        <box size="0.032 0.040 0.0501"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rr_tibia_bone_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 -0.082"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="30" lower="-2.443" upper="2.443" velocity="100"/>
+    <parent link="rr_femur_bone_link"/>
+    <child link="rr_tibia_bone_link"/>
+  </joint>
+  <link name="rr_wheel_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.026"/>
+      </geometry>
+      <material name="grey30">
+        <color rgba="0.3 0.3 0.3 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rr_wheel_joint" type="continuous">
+    <parent link="rr_tibia_bone_link"/>
+    <child link="rr_wheel_link"/>
+    <origin rpy="0 1.57079632679 0" xyz="0 -0.05 -0.153"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+  </joint>
+  <link name="rf_shoulder_link">
+    <inertial>
+      <mass value="0.00001"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.028 0.0485 0.065"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <!-- <material name="green"/> -->
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/F4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rf_shoulder_joint" type="fixed">
+    <origin rpy="1.57079632679 0 -0.7853981634" xyz="0.1 0.1 0"/>
+    <parent link="base_link"/>
+    <child link="rf_shoulder_link"/>
+  </joint>
+  <link name="rf_coxa_bone_link">
+    <inertial>
+      <mass value="0.00001"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.032 0.040 0.0501"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
+      <geometry>
+        <box size="0.028 0.0485 0.008"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 1.57079632679 " xyz="0 0 -0.068"/>
+      <geometry>
+        <box size="0.025 0.0485 0.0375"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 1.57079632679 " xyz="0 0 -0.068"/>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/F2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rf_coxa_bone_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="30" lower="-2.31119772041" upper="2.29074464324" velocity="100"/>
+    <parent link="rf_shoulder_link"/>
+    <child link="rf_coxa_bone_link"/>
+  </joint>
+  <link name="rf_femur_bone_link">
+    <inertial>
+      <mass value="0.00001"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1.57079632679" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.032 0.040 0.0501"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
+      <geometry>
+        <box size="0.028 0.0485 0.008"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
+      <geometry>
+        <box size="0.028 0.0485 0.008"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin rpy="3.14159265359 0 -1.57079632679" xyz="0.008 0 -0.082"/>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.008 0 -0.082"/>
+      <geometry>
+        <box size="0.032 0.040 0.0501"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rf_femur_bone_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 -0.068"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="30" lower="-1.78964425253" upper="1.72828502102" velocity="100"/>
+    <parent link="rf_coxa_bone_link"/>
+    <child link="rf_femur_bone_link"/>
+  </joint>
+  <link name="rf_tibia_bone_link">
+    <inertial>
+      <mass value="0.00001"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision>
       <origin rpy="0 3.14159265359 1.57079632679" xyz="0.008 0 0"/>
       <geometry>
         <box size="0.028 0.0485 0.065"/>
@@ -938,7 +1050,10 @@
     </collision>
     <visual>
       <origin rpy="0 3.14159265359 1.57079632679" xyz="0.008 0 0"/>
-      <material name="grey60"/>
+      <!-- <material name="green"/> -->
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -954,20 +1069,24 @@
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F1.stl" scale="1 1 1"/>
       </geometry>
-      <material name="grey60"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0398 -0.1073"/>
+      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0432 -0.1037"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0398 -0.1073"/>
+      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0432 -0.1037"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
-      <material name="grey70"/>
+      <material name="grey50">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="-0.7853981634 0 0" xyz="-0.0025 -0.02207 -0.08257"/>
@@ -980,41 +1099,64 @@
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
-      <material name="grey70"/>
+      <material name="grey50">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.13029"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.12329"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.13029"/>
-      <material name="green"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.12329"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <visual>
-      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="0.0235 -0.05078 -0.15928"/>
+      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="0.0235 -0.0511 -0.1526"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.0235 -0.05078 -0.15928"/>
+      <origin rpy="0 0 0" xyz="0.0235 -0.0511 -0.1526"/>
       <geometry>
         <box size="0.032 0.040 0.0501"/>
       </geometry>
     </collision>
   </link>
-  <joint name="rr_tibia_bone_joint" type="revolute">
+  <joint name="rf_tibia_bone_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 -0.082"/>
     <axis xyz="1 0 0"/>
-    <limit effort="30" lower="-1.78964425253" upper="1.72828502102" velocity="100"/>
-    <parent link="rr_femur_bone_link"/>
-    <child link="rr_tibia_bone_link"/>
+    <limit effort="30" lower="-2.443" upper="2.443" velocity="100"/>
+    <parent link="rf_femur_bone_link"/>
+    <child link="rf_tibia_bone_link"/>
+  </joint>
+  <link name="rf_wheel_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.026"/>
+      </geometry>
+      <material name="grey30">
+        <color rgba="0.3 0.3 0.3 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rf_wheel_joint" type="continuous">
+    <parent link="rf_tibia_bone_link"/>
+    <child link="rf_wheel_link"/>
+    <origin rpy="0 1.57079632679 0" xyz="0 -0.05 -0.153"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
   </joint>
   <link name="neck_base_link">
     <inertial>
@@ -1023,21 +1165,23 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 -0.025 0"/>
+      <origin rpy="0 0 0" xyz="0 -0.023 0"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="grey30"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 -0.025 0"/>
+      <origin rpy="0 0 0" xyz="0 -0.023 0"/>
       <geometry>
         <box size="0.032 0.040 0.0501"/>
       </geometry>
     </collision>
   </link>
   <joint name="neck_base_joint" type="fixed">
-    <origin rpy="1.57079632679 0 0" xyz="0 0 0.0685"/>
+    <origin rpy="1.57079632679 0 0" xyz="0 0 0.0665"/>
     <parent link="base_link"/>
     <child link="neck_base_link"/>
   </joint>
@@ -1047,29 +1191,73 @@
       <origin xyz="0 0 0"/>
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
-    <!--part_ax12 xyz="0 0 0" rpy="0 0 ${MPI}" /-->
     <collision>
-      <origin rpy="0 0 0 " xyz="0 0 0"/>
+      <origin rpy="1.57079632679 1.57079632679 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.028 0.0485 0.065"/>
+        <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 0 0 " xyz="0 0 0"/>
-      <material name="green"/>
+      <origin rpy="1.57079632679 1.57079632679 0" xyz="0 0 0"/>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
+    <visual>
+      <origin rpy="-1.57079632679 -1.57079632679 0" xyz="0 0.04 0"/>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0.04 0"/>
+      <geometry>
+        <box size="0.032 0.040 0.0501"/>
+      </geometry>
+    </collision>
     <!--part_F2 xyz="0 0 -${L_COXA}" rpy="0 0 ${MPI2} "/-->
   </link>
   <joint name="neck_pan_joint" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 -0.082"/>
-    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="30" lower="-2.61799" upper="2.61799" velocity="100"/>
     <parent link="neck_base_link"/>
     <child link="neck_pan_link"/>
   </joint>
-  <neck_tilt name="neck_tilt" parent="neck_pan"/>
+  <link name="neck_tilt_link">
+    <inertial>
+      <mass value="0.00001"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision>
+      <origin rpy="1.57079632679 1.57079632679 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.025 0.0485 0.0375"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="1.57079632679 1.57079632679 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://stikklar_description/meshes/F2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey60">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="neck_tilt_joint" type="revolute">
+    <origin rpy="3.14159265359 0 0" xyz="0 0.038 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="30" lower="-1.5707" upper="1.5707" velocity="100"/>
+    <parent link="neck_pan_link"/>
+    <child link="neck_tilt_link"/>
+  </joint>
 </robot>
 

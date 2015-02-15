@@ -112,11 +112,11 @@ NEUTRAL SERVO = 364, 512, 742
 	<!-- min servo values: 	coxa=60 femur=162 tibia=95-->
 	<property name="MIN_RAD_COXA" value="-2.3111977204143663" />
 	<property name="MIN_RAD_FEMUR" value="-1.7896442525332481" />
-	<property name="MIN_RAD_TIBIA" value="-2.132233295161041" />
+	<property name="MIN_RAD_TIBIA" value="-2.443" />
 	<!-- max servo values: 	coxa=960 femur=850 tibia=1005-->
 	<property name="MAX_RAD_COXA" value="2.2907446432425576" />
 	<property name="MAX_RAD_FEMUR" value="1.7282850210178222" />
-	<property name="MAX_RAD_TIBIA" value="2.5208417614254039" />
+	<property name="MAX_RAD_TIBIA" value="2.443" />
 	<!-- neutral servo values: 	coxa=364 femur=512 tibia=742-->
 	<property name="NEUTRAL_RAD_COXA" value="-0.75676385535691648" />
 	<property name="NEUTRAL_RAD_FEMUR" value="0.0" />

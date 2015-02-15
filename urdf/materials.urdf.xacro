@@ -1,67 +1,83 @@
 <?xml version="1.0"?>
-<robot>
-
-    <material name="black">
-    <color rgba="0.2 0.2 0.2 1.0"/>
-    </material>
-
-    <material name="orange">
-    <color rgba="1.0 0.55 0.0 1.0"/>
-    </material>
-
-    <material name="grey20">
-        <color rgba="0.2 0.2 0.2 1.0"/>
-    </material>
-
-    <material name="grey25">
-        <color rgba="0.25 0.25 0.25 1.0"/>
-    </material>
-
-    <material name="grey30">
-        <color rgba="0.3 0.3 0.3 1.0"/>
-    </material>
-
-    <material name="grey40">
-        <color rgba="0.4 0.4 0.4 1.0"/>
-    </material>
-
-    <material name="grey50">
-        <color rgba="0.5 0.5 0.5 1.0"/>
-    </material>
-
-    <material name="grey60">
-        <color rgba="0.6 0.6 0.6 1.0"/>
-    </material>
-
-    <material name="grey70">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-    </material>
-
-    <material name="grey75">
-        <color rgba="0.75 0.75 0.75 1.0"/>
-    </material>
-
-    <material name="grey">
-        <color rgba="0.5 0.5 0.5 1.0"/>
-    </material>
-
-    <material name="red">
-        <color rgba="0.8 0.0 0.0 1.0"/>
-    </material>
-
-    <material name="white">
-        <color rgba="1.0 1.0 1.0 1.0"/>
-    </material>
-
-    <material name="blue">
-        <color rgba="0.0 0.0 0.8 1.0"/>
-    </material>
-
-    <material name="green">
-        <color rgba="0.0 0.8 0.0 1.0"/>
-    </material>
-
-    <material name="lightblue">
-        <color rgba="0.55 0.75 0.9 10"/>
-    </material>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <macro name="color_black">
+        <material name="black">
+            <color rgba="0.2 0.2 0.2 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_orange">
+        <material name="orange">
+            <color rgba="1.0 0.55 0.0 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_grey20">
+        <material name="grey20">
+            <color rgba="0.2 0.2 0.2 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_grey25">
+        <material name="grey25">
+            <color rgba="0.25 0.25 0.25 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_grey30">
+        <material name="grey30">
+            <color rgba="0.3 0.3 0.3 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_grey40">
+        <material name="grey40">
+            <color rgba="0.4 0.4 0.4 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_grey50">
+        <material name="grey50">
+            <color rgba="0.5 0.5 0.5 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_grey60">
+        <material name="grey60">
+            <color rgba="0.6 0.6 0.6 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_grey70">
+        <material name="grey70">
+            <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_grey75">
+        <material name="grey75">
+            <color rgba="0.75 0.75 0.75 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_grey">
+        <material name="grey">
+            <color rgba="0.5 0.5 0.5 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_red">
+        <material name="red">
+            <color rgba="0.8 0.0 0.0 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_white">
+        <material name="white">
+            <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_blue">
+        <material name="blue">
+            <color rgba="0.0 0.0 0.8 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_green">
+        <material name="green">
+            <color rgba="0.0 0.8 0.0 1.0"/>
+        </material>
+    </macro>
+    <macro name="color_lightblue">
+        <material name="lightblue">
+            <color rgba="0.55 0.75 0.9 1.0"/>
+        </material>
+    </macro>
 </robot>
