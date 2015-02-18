@@ -5,14 +5,8 @@
   <description>Robot description package for Stikklar a wheeled quadruped</description>
 
   <maintainer email="freyr.magnusson@gmail.com">Freyr Magnusson</maintainer>
-
   <license>BSD</license>
-
-  <!-- Url tags are optional, but mutiple are allowed, one per tag -->
-  <!-- Optional attribute type can be: website, bugtracker, or repository -->
-  <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/stikklar_description</url> -->
-
+  <url type="repository">http://wiki.ros.org/stikklar_description</url>
   <author email="freyr.magnusson@gmail.com">Freyr Magnusson</author>
 
   <buildtool_depend>catkin</buildtool_depend>

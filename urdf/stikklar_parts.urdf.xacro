@@ -251,6 +251,16 @@
         <link name="${name}_link">
             <inertia_default />
             <part_F2 xyz="0 0 0" rpy="${MPI2} ${MPI2} 0"/>
+            <part_box xyz="0 -0.076 0" rpy="0 0 0" size="0.065 0.1 0.03">
+                <color_grey70 />
+            </part_box>
+            <visual>
+                <origin xyz="0.013 -0.081 0.015" rpy="0 0 0" />
+                <geometry>
+                    <cylinder length="0.002" radius="0.004" />
+                </geometry>
+                <color_black />
+            </visual>
         </link>
         <joint_revolute name="${name}" parent="${parent}" xyz="0 0.038 0" rpy="${MPI} 0 0" 
             vel="100" llimit="${MIN_TILT}" ulimit="${MAX_TILT}" axis="1 0 0" /> 
@@ -270,7 +280,7 @@
             <parent link="${parent}_link"/>
             <child link="${name}_link"/>
             <origin xyz="0 -0.05 -0.153" rpy="0 ${MPI2} 0" /> 
-            <axis xyz="0 1 0" rpy="0 0 0" />
+            <axis xyz="0 0 1" rpy="0 0 0" />
         </joint>
     </macro>
 
