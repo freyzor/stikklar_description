@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <macro name="coord" params="xy">
+        <point xy="${xy}" />
+    </macro>
+
+    <coord xy="5 2" />
+    <coord xy="5 -2" />
+    <point2 xy="5 -2" />
+</robot>

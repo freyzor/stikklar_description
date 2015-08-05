@@ -1,0 +1,9 @@
+<robot name="myRobot"
+       xmlns:xacro="http://ros.org/wiki/xacro">
+    <macro name="index" params="xyz rpy">
+        <property name="xyzList" value="${map(float, xyz.split(' '))}"/>
+        <box xyz="${xyzList[0]+1} ${xyzList[1]-2} ${xyzList[2]}"
+             rpy="${rpy}"/>
+    </macro>
+    <index xyz="1 2 3" rpy="1 2 3"/>
+</robot>

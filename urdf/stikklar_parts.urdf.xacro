@@ -3,6 +3,11 @@
 
     <xacro:include filename="stikklar_config.urdf.xacro" />
     <xacro:include filename="materials.urdf.xacro" />
+    <xacro:include filename="gazebo.urdf.xacro" />
+
+    <macro name="to_vec" params="src">
+        <property name="vec" value="${map(float, src.split())}" />
+    </macro>
 
     <macro name="inertia_default">
         <inertial>
@@ -74,7 +79,8 @@
     </macro>
 
     <macro name="collision_ax12" params="xyz rpy">
-        <collision_box xyz="${xyz}" rpy="0 0 0" size="0.032 0.040 0.0501" />
+        <property name="vec" value="${map(float, xyz.split())}" />
+        <collision_box xyz="${vec[0]} ${vec[1]} ${vec[2]-0.013}" rpy="${rpy}" size="0.032 0.038 0.049" />
     </macro>
 
     <macro name="part_ax12" params="xyz rpy">
@@ -114,7 +120,8 @@
         </visual>
     </macro>
     <macro name="collision_F2" params="xyz rpy">
-        <collision_box xyz="${xyz}" rpy="${rpy}" size="0.025 0.0485 0.0375" />
+        <property name="vec" value="${map(float, xyz.split())}" />
+        <collision_box xyz="${vec[0]} ${vec[1]} ${vec[2]+0.008}"  rpy="${rpy}" size="0.025 0.0485 0.0375" />
     </macro>
     <macro name="part_F2" params="xyz rpy">
         <collision_F2 xyz="${xyz}" rpy="${rpy}" />
@@ -133,7 +140,8 @@
         </visual>
     </macro>
     <macro name="collision_F3" params="xyz rpy">
-        <collision_box xyz="${xyz}" rpy="${rpy}" size="0.028 0.0485 0.008" />
+        <property name="vec" value="${map(float, xyz.split())}" />
+        <collision_box xyz="${vec[0]} ${vec[1]} ${vec[2]+0.004}" rpy="${rpy}" size="0.025 0.038 0.008" />
     </macro>
     <macro name="part_F3" params="xyz rpy">
         <collision_F3 xyz="${xyz}" rpy="${rpy}" />
@@ -147,13 +155,13 @@
     <macro name="visual_F4" params="xyz rpy">
         <visual>
             <origin xyz="${xyz}" rpy="${rpy}" />
-            <!-- <material name="green"/> -->
             <color_grey60 />
             <geometry_F4 />
         </visual>
     </macro>
     <macro name="collision_F4" params="xyz rpy">
-        <collision_box xyz="${xyz}" rpy="${rpy}" size="0.028 0.0485 0.065" />
+        <property name="vec" value="${map(float, xyz.split())}" />
+        <collision_box xyz="${vec[0]+0.0} ${vec[1]+0.0} ${vec[2]+0.0}" rpy="${rpy}" size="0.028 0.0485 0.065" />
     </macro>
 
     <macro name="part_F4" params="xyz rpy">
@@ -207,7 +215,13 @@
             <part_ax12 xyz="${side*0.008} 0 -${L_FEMUR}" rpy="${MPI} 0 -${MPI2}"/>
         </link> 
         <joint_revolute name="${name}" parent="${parent}" xyz="0 0 -${L_COXA}" rpy="0 0 0" 
-            vel="100" llimit="${MIN_RAD_FEMUR}" ulimit="${MAX_RAD_FEMUR}" axis="${VLEFT}" />   
+            vel="100" llimit="${MIN_RAD_FEMUR}" ulimit="${MAX_RAD_FEMUR}" axis="${VLEFT}" />
+        <transmission name="${name}_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="caster_front_left_motor" />
+            <joint name="caster_front_left_joint" />
+            <mechanicalReduction>1</mechanicalReduction>
+        </transmission>
     </macro>
 
     <property name="TIBIA_AX" value="0.008" />

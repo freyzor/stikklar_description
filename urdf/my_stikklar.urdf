@@ -86,7 +86,7 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 3.14159265359 0 " xyz="0.1 0.1 0.0585"/>
+      <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -145,7 +145,7 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 3.14159265359 0" xyz="0.1 0.1 0.0585"/>
+      <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -160,7 +160,7 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.092 0.1 0.0585"/>
+      <origin rpy="0 0 0" xyz="-0.008 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -220,13 +220,13 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.008 -0.015 -0.0755"/>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.0985"/>
       <geometry>
         <box size="0.04 0.028 0.046"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.008 -0.015 -0.0755"/>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.0985"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F1.stl" scale="1 1 1"/>
       </geometry>
@@ -235,13 +235,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.018 -0.0432 -0.1037"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.1649"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.018 -0.0432 -0.1037"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.1649"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
@@ -250,13 +250,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="0.0025 -0.02207 -0.08257"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.10214"/>
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="0.0025 -0.02207 -0.08257"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.10214"/>
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
@@ -265,13 +265,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0765 0.05135 -0.02329"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.19544"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.0235 -0.04865 -0.12329"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.19544"/>
       <material name="grey60">
         <color rgba="0.6 0.6 0.6 1.0"/>
       </material>
@@ -280,7 +280,7 @@
       </geometry>
     </visual>
     <visual>
-      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="-0.0235 -0.0511 -0.1526"/>
+      <origin rpy="0.7853981634" xyz="-0.2272"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -289,7 +289,7 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.0235 -0.0511 -0.1526"/>
+      <origin rpy="0 0 0" xyz="-0.2272"/>
       <geometry>
         <box size="0.032 0.040 0.0501"/>
       </geometry>
@@ -370,7 +370,7 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 3.14159265359 0 " xyz="0.1 0.1 0.0585"/>
+      <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -429,7 +429,7 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 3.14159265359 0" xyz="0.1 0.1 0.0585"/>
+      <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -444,7 +444,7 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.108 0.1 0.0585"/>
+      <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -504,13 +504,13 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.008 -0.015 -0.0755"/>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.0825"/>
       <geometry>
         <box size="0.04 0.028 0.046"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.008 -0.015 -0.0755"/>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.0825"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F1.stl" scale="1 1 1"/>
       </geometry>
@@ -519,13 +519,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0432 -0.1037"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.1289"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0432 -0.1037"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.1289"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
@@ -534,13 +534,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.0025 -0.02207 -0.08257"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.10714"/>
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.0025 -0.02207 -0.08257"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.10714"/>
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
@@ -549,13 +549,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.1235 0.05135 -0.02329"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.14844"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.12329"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.14844"/>
       <material name="grey60">
         <color rgba="0.6 0.6 0.6 1.0"/>
       </material>
@@ -564,7 +564,7 @@
       </geometry>
     </visual>
     <visual>
-      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="0.0235 -0.0511 -0.1526"/>
+      <origin rpy="0.7853981634" xyz="-0.1802"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -573,7 +573,7 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.0235 -0.0511 -0.1526"/>
+      <origin rpy="0 0 0" xyz="-0.1802"/>
       <geometry>
         <box size="0.032 0.040 0.0501"/>
       </geometry>
@@ -654,7 +654,7 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 3.14159265359 0 " xyz="0.1 0.1 0.0585"/>
+      <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -713,7 +713,7 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 3.14159265359 0" xyz="0.1 0.1 0.0585"/>
+      <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -728,7 +728,7 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.092 0.1 0.0585"/>
+      <origin rpy="0 0 0" xyz="-0.008 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -788,13 +788,13 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.008 -0.015 -0.0755"/>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.0985"/>
       <geometry>
         <box size="0.04 0.028 0.046"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.008 -0.015 -0.0755"/>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.0985"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F1.stl" scale="1 1 1"/>
       </geometry>
@@ -803,13 +803,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.018 -0.0432 -0.1037"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.1649"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.018 -0.0432 -0.1037"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.1649"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
@@ -818,13 +818,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="0.0025 -0.02207 -0.08257"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.10214"/>
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="0.0025 -0.02207 -0.08257"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.10214"/>
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
@@ -833,13 +833,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0765 0.05135 -0.02329"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.19544"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.0235 -0.04865 -0.12329"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.19544"/>
       <material name="grey60">
         <color rgba="0.6 0.6 0.6 1.0"/>
       </material>
@@ -848,7 +848,7 @@
       </geometry>
     </visual>
     <visual>
-      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="-0.0235 -0.0511 -0.1526"/>
+      <origin rpy="0.7853981634" xyz="-0.2272"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -857,7 +857,7 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.0235 -0.0511 -0.1526"/>
+      <origin rpy="0 0 0" xyz="-0.2272"/>
       <geometry>
         <box size="0.032 0.040 0.0501"/>
       </geometry>
@@ -938,7 +938,7 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 3.14159265359 0 " xyz="0.1 0.1 0.0585"/>
+      <origin rpy="0 3.14159265359 0 " xyz="0 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -997,7 +997,7 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 3.14159265359 0" xyz="0.1 0.1 0.0585"/>
+      <origin rpy="0 3.14159265359 0" xyz="0 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -1012,7 +1012,7 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.108 0.1 0.0585"/>
+      <origin rpy="0 0 0" xyz="0.008 0 -0.0415"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
@@ -1072,13 +1072,13 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.008 -0.015 -0.0755"/>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.0825"/>
       <geometry>
         <box size="0.04 0.028 0.046"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.008 -0.015 -0.0755"/>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="-0.0825"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/F1.stl" scale="1 1 1"/>
       </geometry>
@@ -1087,13 +1087,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0432 -0.1037"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.1289"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="0.018 -0.0432 -0.1037"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.1289"/>
       <geometry>
         <box size="0.02 0.02 0.1"/>
       </geometry>
@@ -1102,13 +1102,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.0025 -0.02207 -0.08257"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.10714"/>
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="-0.7853981634 0 0" xyz="-0.0025 -0.02207 -0.08257"/>
+      <origin rpy="-0.7853981634 0 0" xyz="-0.10714"/>
       <geometry>
         <box size="0.02 0.02 0.04"/>
       </geometry>
@@ -1117,13 +1117,13 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.1235 0.05135 -0.02329"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.14844"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 -0.7853981634 1.57079632679" xyz="0.0235 -0.04865 -0.12329"/>
+      <origin rpy="0 -0.7853981634 1.57079632679" xyz="-0.14844"/>
       <material name="grey60">
         <color rgba="0.6 0.6 0.6 1.0"/>
       </material>
@@ -1132,7 +1132,7 @@
       </geometry>
     </visual>
     <visual>
-      <origin rpy="3.14159265359 -0.7853981634 -1.57079632679" xyz="0.0235 -0.0511 -0.1526"/>
+      <origin rpy="0.7853981634" xyz="-0.1802"/>
       <geometry>
         <mesh filename="package://stikklar_description/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -1141,7 +1141,7 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.0235 -0.0511 -0.1526"/>
+      <origin rpy="0 0 0" xyz="-0.1802"/>
       <geometry>
         <box size="0.032 0.040 0.0501"/>
       </geometry>
@@ -1205,7 +1205,7 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
     <collision>
-      <origin rpy="1.57079632679 1.57079632679 0" xyz="0.1 0.1 0.1"/>
+      <origin rpy="1.57079632679 1.57079632679 0" xyz="0 0 0"/>
       <geometry>
         <box size="0.028 0.0485 0.008"/>
       </geometry>
