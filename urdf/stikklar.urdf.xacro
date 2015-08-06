@@ -4,10 +4,12 @@
 
 	<xacro:include filename="$(find stikklar_description)/urdf/stikklar_parts.urdf.xacro" />
 	
-	<xacro:base size="0.14 0.14 0.055" />
+	<xacro:base />
+	<xacro:body parent="base" size="0.14 0.14 0.055" />
 	<xacro:stikklar_leg parent="base" name="lf" xyz="-${HALFBASE} ${HALFBASE} 0"  rpy="${MPI2} 0 ${MPI4}"     side="-1" />
 	<xacro:stikklar_leg parent="base" name="lr" xyz="-${HALFBASE} -${HALFBASE} 0" rpy="${MPI2} 0 ${MPI-MPI4}" side="1"  />
 	<xacro:stikklar_leg parent="base" name="rr" xyz="${HALFBASE} -${HALFBASE} 0"  rpy="${MPI2} 0 ${MPI4-MPI}" side="-1"  />
 	<xacro:stikklar_leg parent="base" name="rf" xyz="${HALFBASE} ${HALFBASE} 0"   rpy="${MPI2} 0 ${-MPI4}"    side="1"  />
 	<xacro:stikklar_turret parent="base" />
+
 </robot>

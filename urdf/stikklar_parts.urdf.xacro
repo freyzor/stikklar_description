@@ -9,9 +9,9 @@
         <property name="vec" value="${map(float, src.split())}" />
     </macro>
 
-    <macro name="inertia_default">
+    <macro name="inertia_default" params="mass">
         <inertial>
-            <mass value="0.00001" />
+            <mass value="${mass}" />
             <origin xyz="0 0 0" />
             <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
         </inertial>
@@ -35,7 +35,7 @@
     </macro>
     <macro name="link_mesh" params="name mesh color box_xyz size scale">
         <link name="${name}_link">
-            <inertia_default />
+            <inertia_default mass="0.1" />
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
@@ -63,7 +63,7 @@
         </joint>        
     </macro>
 
-    <!-- atmic shapes, ax12, bioloids frames F1, F2, F3, F4 -->
+    <!-- atomic shapes, ax12, bioloids frames F1, F2, F3, F4 -->
     <macro name="geometry_ax12">
         <geometry>
             <mesh filename="package://${PACKAGE}/meshes/ax12.stl" scale="0.001 0.001 0.001"/>
@@ -190,25 +190,28 @@
     <!-- link+join+composite visuals and collisions -->
     <macro name="shoulder" params="parent name xyz rpy">
         <link name="${name}_link">
-            <inertia_default />
+            <inertia_default mass="0.1" />
             <part_F4 xyz="0 0 0" rpy="0 0 0" />
         </link>
         <joint_fixed name="${name}" parent="${parent}" xyz="${xyz}" rpy="${rpy}" />
     </macro>
     <macro name="coxa_bone" params="parent name">
         <link name="${name}_link">
-            <inertia_default />
+            <gazebo_color ref="${name}_link" color="Green" />
+            <inertia_default mass="0.1" />
             <part_ax12 xyz="0 0 0" rpy="0 0 ${MPI}" />
             <part_F3 xyz="0 0 -0.0415" rpy="0 ${MPI} 0 "/>
             <part_F2 xyz="0 0 -${L_COXA}" rpy="0 0 ${MPI2} "/>
         </link> 
         <joint_revolute name="${name}" parent="${parent}" xyz="0 0 0" rpy="0 0 0" 
-            vel="100" llimit="${MIN_RAD_COXA}" ulimit="${MAX_RAD_COXA}" axis="0 1 0" />   
+            vel="100" llimit="${MIN_RAD_COXA}" ulimit="${MAX_RAD_COXA}" axis="0 1 0" />
+        <servo_transmission name="${name}" reduction="1" />
     </macro>
 
     <macro name="femur_bone" params="parent name side">
         <link name="${name}_link">
-            <inertia_default />
+            <gazebo_color ref="${name}_link" color="Orange" />
+            <inertia_default mass="0.1" />
             <part_ax12 xyz="0 0 0" rpy="0 0 ${MPI2}"/>
             <part_F3 xyz="0 0 -0.0415" rpy="0 ${MPI} 0"/>
             <part_F3 xyz="${side*0.008} 0 -0.0415" rpy="0 0 0"/>
@@ -216,12 +219,7 @@
         </link> 
         <joint_revolute name="${name}" parent="${parent}" xyz="0 0 -${L_COXA}" rpy="0 0 0" 
             vel="100" llimit="${MIN_RAD_FEMUR}" ulimit="${MAX_RAD_FEMUR}" axis="${VLEFT}" />
-        <transmission name="${name}_transmission">
-            <type>transmission_interface/SimpleTransmission</type>
-            <actuator name="caster_front_left_motor" />
-            <joint name="caster_front_left_joint" />
-            <mechanicalReduction>1</mechanicalReduction>
-        </transmission>
+        <servo_transmission name="${name}" reduction="1" />
     </macro>
 
     <property name="TIBIA_AX" value="0.008" />
@@ -232,7 +230,8 @@
 
     <macro name="tibia_bone" params="parent name side">
         <link name="${name}_link">
-            <inertia_default />
+            <gazebo_color ref="${name}_link" color="Blue" />
+            <inertia_default mass="0.1" />
             <part_F4 xyz="${side*TIBIA_AX} 0 0" rpy="0 ${MPI} ${MPI2}" />
             <part_F1 xyz="${side*TIBIA_AX} ${-TIBIA_AY} ${-TIBIA_AZ}" rpy="-${MPI2} 0 ${MPI2}" />
             <part_tibia_bone xyz="${side*0.018} ${-TIBIA_AY-0.0282} ${-TIBIA_AZ-0.0282}" rpy="-${MPI4} 0 0" />
@@ -241,19 +240,20 @@
             <part_ax12 xyz="${side*0.0235} ${-TIBIA_AY-AX12T+0.0205} ${-TIBIA_AZ-AX12T-0.0205}" rpy="${MPI} -${MPI4} -${MPI2}" />
         </link> 
         <joint_revolute name="${name}" parent="${parent}" xyz="0 0 -${L_FEMUR}" rpy="0 0 0" 
-            vel="100" llimit="${MIN_RAD_TIBIA}" ulimit="${MAX_RAD_TIBIA}" axis="${VLEFT}" />   
+            vel="100" llimit="${MIN_RAD_TIBIA}" ulimit="${MAX_RAD_TIBIA}" axis="${VLEFT}" />
+        <servo_transmission name="${name}" reduction="1" />
     </macro>
 
     <macro name="neck_base" params="name parent">
         <link name="neck_base_link">
-            <inertia_default />
+            <inertia_default mass="0.1"  />
             <part_ax12 xyz="0 -0.023 0" rpy="0 0 0" />
         </link>
         <joint_fixed name="neck_base" parent="${parent}" xyz="0 0 ${0.039+0.055/2}" rpy="${MPI2} 0 0" />
     </macro>
     <macro name="neck_pan" params="name parent">
         <link name="${name}_link">
-            <inertia_default />
+            <inertia_default mass="0.1"  />
             <part_F3 xyz="0 0 0" rpy="${MPI2} ${MPI2} 0"/>
             <part_ax12 xyz="0 0.04 0" rpy="-${MPI2} -${MPI2} 0" />
             <!--part_F2 xyz="0 0 -${L_COXA}" rpy="0 0 ${MPI2} "/-->
@@ -263,7 +263,7 @@
     </macro>
     <macro name="neck_tilt" params="name parent">
         <link name="${name}_link">
-            <inertia_default />
+            <inertia_default mass="0.1"  />
             <part_F2 xyz="0 0 0" rpy="${MPI2} ${MPI2} 0"/>
             <part_box xyz="0 -0.076 0" rpy="0 0 0" size="0.065 0.1 0.03">
                 <color_grey70 />
@@ -298,14 +298,19 @@
         </joint>
     </macro>
 
-    <macro name="base" params="size">
-        <link name="base_link">
-            <inertia_default />
+    <macro name="base">
+        <link name="base_link"></link>
+    </macro>
+
+    <macro name="body" params="parent size">
+        <link name="body_link">
+            <inertia_default mass="0.3" />
             <visual_box xyz="0 0 0" rpy="0 0 0" size="${size}">
                 <color_black />
             </visual_box>
             <collision_box xyz="0 0 0" rpy="0 0 0" size="${size}" />
         </link>
+        <joint_fixed name="body" parent="${parent}" xyz="0 0 0" rpy="0 0 0" />
     </macro>
 
     <macro name="stikklar_leg" params="parent name xyz rpy side">
