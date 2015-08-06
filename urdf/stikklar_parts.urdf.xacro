@@ -197,7 +197,6 @@
     </macro>
     <macro name="coxa_bone" params="parent name">
         <link name="${name}_link">
-            <gazebo_color ref="${name}_link" color="Green" />
             <inertia_default mass="0.1" />
             <part_ax12 xyz="0 0 0" rpy="0 0 ${MPI}" />
             <part_F3 xyz="0 0 -0.0415" rpy="0 ${MPI} 0 "/>
@@ -210,7 +209,6 @@
 
     <macro name="femur_bone" params="parent name side">
         <link name="${name}_link">
-            <gazebo_color ref="${name}_link" color="Orange" />
             <inertia_default mass="0.1" />
             <part_ax12 xyz="0 0 0" rpy="0 0 ${MPI2}"/>
             <part_F3 xyz="0 0 -0.0415" rpy="0 ${MPI} 0"/>
@@ -230,7 +228,6 @@
 
     <macro name="tibia_bone" params="parent name side">
         <link name="${name}_link">
-            <gazebo_color ref="${name}_link" color="Blue" />
             <inertia_default mass="0.1" />
             <part_F4 xyz="${side*TIBIA_AX} 0 0" rpy="0 ${MPI} ${MPI2}" />
             <part_F1 xyz="${side*TIBIA_AX} ${-TIBIA_AY} ${-TIBIA_AZ}" rpy="-${MPI2} 0 ${MPI2}" />
